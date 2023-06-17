@@ -1,0 +1,18 @@
+$color: #009688;
+:host {
+  display: block;
+  border: 1px solid $color;
+  padding: 10px;
+  position: relative;
+  &:before {
+    content: "app.component";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: darken($color, 10%);
+    color: white;
+    padding: 10px;
+    font-size: 10px;
+    font-family: monospace;
+  }
+}

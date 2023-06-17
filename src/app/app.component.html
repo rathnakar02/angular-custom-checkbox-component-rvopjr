@@ -1,0 +1,30 @@
+<h1>Usage with NgModel</h1>
+
+<ng-container *ngFor="let item of items; let i = index">
+  <app-custom-checkbox [(ngModel)]="item.value">
+    {{ item.name }}
+  </app-custom-checkbox>
+</ng-container>
+
+<h2>Variable in app.component</h2>
+{{ items | json }}
+
+<hr />
+
+<h1>Usage with Form Control</h1>
+<app-custom-checkbox [formControl]="inputTwo"> Checkbox 2 </app-custom-checkbox>
+
+<h2>Variable in app.component</h2>
+{{ inputTwo.value }}, control touched: {{ inputTwo.touched }}
+
+<hr />
+
+<h1>Usage in Form</h1>
+
+<form [formGroup]="form">
+  <app-custom-checkbox formControlName="myFormControl">
+    Checkbox 3
+  </app-custom-checkbox>
+</form>
+<h2>Variable in app.component</h2>
+{{ form.get('myFormControl').value }}
